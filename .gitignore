@@ -1,0 +1,23 @@
+## Sistema operativo 
+
+.DS_Store Thumbs.db 
+
+## Logs y temporales 
+
+*.log *.tmp *.swp 
+
+## Docker 
+
+docker/*.env docker//tmp/ docker//data/ docker/**/cache/ 
+
+## Node Exporter / Prometheus / Grafana 
+
+docker/prometheus/data/ docker/grafana/data/ 
+
+## VSCode 
+
+.vscode/ *.code-workspace 
+
+## Python 
+
+pycache/ *.py[cod] *.pyo 
