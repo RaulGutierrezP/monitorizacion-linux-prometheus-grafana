@@ -2,6 +2,7 @@
 
 # Script para detener la plataforma de monitorización
 # Prometheus + Grafana + Node Exporter
+# Se ejecuta desde monitorizacion-linux-prometheus-grafana
 
 echo "🛑 Deteniendo plataforma de monitorización..."
 
