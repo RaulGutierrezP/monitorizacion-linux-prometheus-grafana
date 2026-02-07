@@ -19,14 +19,14 @@ Proyecto personal enfocado en la administración de sistemas Linux y monitorizac
 - Prometheus
 - Grafana
 - Node Exporter
-- Ubuntu 20.04 (WSL)
+- Ubuntu 24.04 (WSL)
 - Git y GitHub
 
 ## 📂 Estructura del proyecto
 
 La estructura del repositorio está organizada por fases de desarrollo y componentes del sistema:
 
-- `docs/` → Documentación del proyecto
+- `docs/` → Documentación del proyecto (PASO A PASO)
 - `docker/` → Configuración de los servicios
 - `scripts/` → Scripts de automatización
 - `screenshots/` → Evidencias visuales del sistema
@@ -41,12 +41,7 @@ docker-compose up -d
 
 ## 📄 Autor
 
-<div align="left">
-  <img src="https://img.shields.io/badge/Raúl%20Gutiérrez-blue?style=for-the-badge&logo=github" alt="Autor">
-  <a href="https://www.linkedin.com/in/raúl-gutiérrez-354073320" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  <br><br>
+<div align="left"> <img src="https://img.shields.io/badge/Raúl%20Gutiérrez-blue?style=for-the-badge&logo=github" alt="Autor"> <a href="https://www.linkedin.com/in/raúl-gutiérrez-354073320" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"> </a> <br><br>
   
   **🎓 Formación:** ASIR  
   **📅 Año:** 2026  
