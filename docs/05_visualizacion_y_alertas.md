@@ -87,6 +87,25 @@ Tras completar esta fase, la plataforma de monitorización dispone de:
 
 El sistema queda preparado para su validación final y análisis de resultados.
 
+## 8. Para las alertas hay que incluir este bloque en: **docker-compose.yml**
+
+```yaml
+grafana:
+  image: grafana/grafana:latest
+  container_name: grafana
+  ports:
+    - "3000:3000"
+  environment:
+    - GF_SMTP_ENABLED=true
+    - GF_SMTP_HOST=smtp.gmail.com:587
+    - GF_SMTP_USER=tu_correo@gmail.com
+    - GF_SMTP_PASSWORD=CONTRASEÑA_DE_APLICACION
+    - GF_SMTP_FROM_ADDRESS=tu_correo@gmail.com
+    - GF_SMTP_FROM_NAME=Grafana Alerts
+  volumes:
+    - ./grafana:/var/lib/grafana
+```
+
 
 
 
