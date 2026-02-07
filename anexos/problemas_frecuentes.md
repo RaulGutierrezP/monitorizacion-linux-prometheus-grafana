@@ -57,3 +57,51 @@ Cierra tu terminal, ábrela de nuevo y ejecuta el comando en la carpeta de tu pr
 
 ```bash
 docker-compose up -d
+```
+---
+
+## ❗ Error de conexión entre Grafana y Prometheus (connection refused)
+
+**Problema:**  
+
+Al acceder a los dashboards de Grafana o ejecutar consultas sobre las métricas, se muestra el siguiente error:
+
+Post "http://localhost:9090/api/v1/query_range": dial tcp [::1]:9090: connect: connection refused
+
+Este error impide que Grafana muestre datos provenientes de Prometheus.
+
+**Causa:**  
+En entornos contenerizados con Docker, el uso de `localhost` dentro de un contenedor hace referencia al propio contenedor y no al sistema anfitrión ni a otros servicios.  
+Por este motivo, Grafana no puede conectarse a Prometheus utilizando `http://localhost:9090`.
+
+**Solución:**  
+Configurar Grafana para que se conecte a Prometheus utilizando el nombre del servicio definido en el archivo `docker-compose.yml`, aprovechando la red interna de Docker.
+
+### Pasos para solucionarlo:
+
+1. **Verificar el nombre del servicio Prometheus**
+
+Comprobar en el archivo `docker-compose.yml` que el servicio de Prometheus está definido con el siguiente nombre:
+
+```yaml
+services
+  prometheus
+```
+
+2. **Configurar correctamente el datasource en Grafana**
+
+Acceder a la interfaz web de Grafana y seguir los pasos:
+
+    → Ir a Configuration → Data sources
+
+    → Seleccionar el datasource de Prometheus
+
+    → Modificar el campo URL con el valor: http://prometheus:9090
+
+Guardar los cambios pulsando Save & Test
+
+3. **Verificar la conexión**
+
+Si la configuración es correcta, Grafana mostrará el mensaje: **Data source is working**
+
+A partir de este momento, los dashboards comenzarán a mostrar métricas correctamente.

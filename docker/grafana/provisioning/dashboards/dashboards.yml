@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: 'Linux Monitoring'
+    orgId: 1
+    folder: 'Linux'
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards
